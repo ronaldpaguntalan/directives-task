@@ -1,0 +1,41 @@
+<div [class.form-container] = 'true'>
+    <h3>User Details</h3>
+
+    <input type="text" placeholder="Name" [(ngModel)]="userName" required>
+
+    <input type="email" placeholder="Email" [(ngModel)]="userEmail" required>
+
+    <textarea cols="30" rows="10" placeholder="Address" [(ngModel)]="userAddress"></textarea>
+
+    <button (click)="saveData()">Save Data</button>
+</div>
+
+<div *ngIf = "userDetailsObj.length > 0; else noData">
+    <table [ngClass] = "{
+        'table-container' : true
+    }">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor = "let user of userDetailsObj; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.address}}</td>
+        <td><button (click)="deleteData(i)">Delete</button></td>
+    </tr>
+    </table>
+</div>
+
+<ng-template #noData>
+    <h4 [style.text-align] = "'center'" >
+        No data to show
+    </h4> 
+</ng-template>
+
+
+

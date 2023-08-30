@@ -1,0 +1,26 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container > input, textarea{
+
+    margin: 10px;
+
+}
+
+.table-container{
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+}
+
+.table-container > tr > th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.table-container > tr > td, th {
+    padding: 8px;
+}
